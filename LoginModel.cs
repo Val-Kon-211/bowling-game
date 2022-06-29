@@ -4,7 +4,7 @@ namespace AuthApp.ViewModels
 {
     public class LoginModel
     {
-        [Required(ErrorMessage = "Не указан ")]
+        [Required(ErrorMessage = "Не указан логин")]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Не указан пароль")]
