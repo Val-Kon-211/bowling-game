@@ -1,0 +1,8 @@
+C:\Users\konva\source\repos\TryTwo-main\TryTwo\obj\Debug\netcoreapp3.1\Bowling.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\konva\source\repos\TryTwo-main\TryTwo\obj\Debug\netcoreapp3.1\Bowling.AssemblyInfoInputs.cache
+C:\Users\konva\source\repos\TryTwo-main\TryTwo\obj\Debug\netcoreapp3.1\Bowling.AssemblyInfo.cs
+C:\Users\konva\source\repos\TryTwo-main\TryTwo\obj\Debug\netcoreapp3.1\Bowling.csproj.CoreCompileInputs.cache
+C:\Users\konva\source\repos\TryTwo-main\TryTwo\obj\Debug\netcoreapp3.1\Bowling.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\konva\source\repos\TryTwo-main\TryTwo\obj\Debug\netcoreapp3.1\Bowling.RazorAssemblyInfo.cache
+C:\Users\konva\source\repos\TryTwo-main\TryTwo\obj\Debug\netcoreapp3.1\Bowling.RazorAssemblyInfo.cs
+C:\Users\konva\source\repos\TryTwo-main\TryTwo\obj\Debug\netcoreapp3.1\Bowling.csproj.AssemblyReference.cache

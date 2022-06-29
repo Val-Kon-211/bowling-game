@@ -1,0 +1,63 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+}
+
+<h1>Добро пожаловать, @ViewBag.username!</h1>
+<h3><i>Ваш счет: @ViewBag.wins:@ViewBag.loss</i></h3>
+
+<form asp-action="CreateGame" asp-controller="Battleships" asp-anti-forgery="true" method="post">
+    <input type="submit" class="btn btn-primary" value="Создать игру"/>
+</form>
+
+<table style="min-width: 40%">
+    <thead>
+        <tr>
+            <td>Номер комнаты</td>
+            <td>Игрок</td>
+            <td> </td>
+        </tr>
+    </thead>
+
+    <tbody id="lobbyGames">
+        <tr>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    const lobbyGames = document.getElementById('lobbyGames');
+    var lobbyRequest = new XMLHttpRequest();
+
+    function reloadAvailableGames() {
+        lobbyGames.innerHTML = '';
+        const data = JSON.parse(lobbyRequest.responseText);
+        console.log(JSON.stringify(data, null, 4));
+
+        data.forEach(message => {
+            lobbyGames.insertAdjacentHTML(
+                'afterbegin',
+                `<tr><td>${message.gameID}</td> <td>${message.player1Name}</td>
+                     <td><a href="./JoinGame/${message.gameID}" class="btn btn-primary">Присоединиться</a></td>
+                 </tr>`);
+        });
+    }
+
+    function requestGames() {
+        lobbyRequest.open("GET", "LobbyGames");
+        lobbyRequest.send();
+    }
+
+    window.addEventListener("load", function (event) {
+        lobbyRequest.addEventListener("load", reloadAvailableGames);
+        lobbyRequest.open("GET", "LobbyGames");
+        lobbyRequest.send();
+
+        setInterval(() => {
+            requestGames();
+        }, 2000);
+    });
+</script>

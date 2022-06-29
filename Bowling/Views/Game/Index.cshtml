@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@section Styles {
+    <link href="~/css/bowling.css" rel="stylesheet">
+}
+
+<div id="gameArea">
+    <div class="footer htmlpreview-fallback">
+
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/js/bowling.js"></script>
+    <script>
+        window.onload = function () {
+            var game = new BattleShipsGame('gameArea');
+            game.setPlayerSession(@ViewBag.playerId, @ViewBag.sessionId)
+            game.run();
+            // fallback для htmlpreview
+            game.startNewGame();
+        }
+    </script>
+}
+
+
